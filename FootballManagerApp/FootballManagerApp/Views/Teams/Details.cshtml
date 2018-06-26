@@ -1,0 +1,51 @@
+﻿@model FootballManagerApp.Models.Team
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Team</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.abbreviation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.abbreviation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.completeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.completeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Association1.completeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Association1.completeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.iD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

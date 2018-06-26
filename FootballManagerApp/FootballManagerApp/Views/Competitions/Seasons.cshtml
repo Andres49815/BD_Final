@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FootballManagerApp.Models.Season>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.startYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.beginDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.endDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.startYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.beginDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endDate)
+            </td>
+            <td>
+                @Html.ActionLink("Ver Jornadas", "Matchdays", new { c = item.competition, y = item.startYear }) |
+                @Html.ActionLink("Arbitros", "Referees_Q", new { c = item.competition, y = item.startYear }) |
+                @Html.ActionLink("Tabla General", "General_Table_Q", new { c = item.competition, y = item.startYear }) |
+                @Html.ActionLink("Eliminar", "Delete_T", new { c = item.competition, y = item.startYear }) |
+                @Html.ActionLink("Simular", "Simulate", new { c = item.competition, y = item.startYear })
+            </td>
+        </tr>
+    }
+    @Html.ActionLink("Nuevo", "New_Season", new { c = ViewBag.competition })
+</table>

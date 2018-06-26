@@ -1,0 +1,43 @@
+﻿@model FootballManagerApp.Models.Competition
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Competition</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.complete_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.complete_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Association1.completeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Association1.completeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Competition_Type.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Competition_Type.description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.iD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

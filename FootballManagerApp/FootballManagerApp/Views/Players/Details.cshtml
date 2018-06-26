@@ -1,0 +1,111 @@
+﻿@model FootballManagerApp.Models.Historic_Player_Result
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Player</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.player.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.player.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.player.lastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.player.lastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.player.weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.player.weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.player.height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.player.height)
+        </dd>
+
+    </dl>
+</div>
+
+<h3>Equipos en los que ha participado</h3>
+<table class="table">
+    <tr>
+        <th>
+            Equipo
+        </th>
+        <th>
+            Fecha de firma
+        </th>
+        <th>
+            Fecha de separacion
+        </th>
+    </tr>
+
+    @foreach (var item in Model.teams)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.team)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.signDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.breakUpDate)
+        </td>
+    </tr>
+    }
+
+</table>
+
+
+<h3>Notas por temporada</h3>
+<table class="table">
+    <tr>
+        <th>
+            Temporada
+        </th>
+        <th>
+            Promedio
+        </th>
+    </tr>
+
+    @foreach (var item in Model.scores)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.startYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.avarage)
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

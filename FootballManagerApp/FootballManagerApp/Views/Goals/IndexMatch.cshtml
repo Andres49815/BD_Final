@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FootballManagerApp.Models.Goal>
+
+@{
+    ViewBag.Title = "Goles: " + Model.First().LineUp.Team1.abbreviation;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Registrar Gol", "CreateFixed",new { match = Model.First().match, team = Model.First().team})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LineUp.Player1.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LineUp.position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.goalType.goalType1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.minute)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LineUp.Player1.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LineUp.position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.goalType.goalType1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.minute)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

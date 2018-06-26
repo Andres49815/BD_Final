@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FootballManagerDBModelStoreContainer" CdmEntityContainer="FootballManagerDBEntities">
+    <EntitySetMapping Name="Associations">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Association">
+        <MappingFragment StoreEntitySet="Association">
+          <ScalarProperty Name="abbreviation" ColumnName="abbreviation" />
+          <ScalarProperty Name="completeName" ColumnName="completeName" />
+          <ScalarProperty Name="formation" ColumnName="formation" />
+          <ScalarProperty Name="country" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coaches">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Coach">
+        <MappingFragment StoreEntitySet="Coach">
+          <ScalarProperty Name="iD" ColumnName="iD" />
+          <ScalarProperty Name="coach_Name" ColumnName="coach_Name" />
+          <ScalarProperty Name="imageURL" ColumnName="imageURL" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="wasPlayer" ColumnName="wasPlayer" />
+          <ScalarProperty Name="dateStart" ColumnName="dateStart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coach_Degree">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Coach_Degree">
+        <MappingFragment StoreEntitySet="Coach_Degree">
+          <ScalarProperty Name="iD_Coach" ColumnName="iD_Coach" />
+          <ScalarProperty Name="iD_Degree" ColumnName="iD_Degree" />
+          <ScalarProperty Name="dateReceived" ColumnName="dateReceived" />
+          <ScalarProperty Name="university" ColumnName="university" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coach_Direction">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Coach_Direction">
+        <MappingFragment StoreEntitySet="Coach_Direction">
+          <ScalarProperty Name="coach" ColumnName="coach" />
+          <ScalarProperty Name="direction" ColumnName="direction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coach_Email">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Coach_Email">
+        <MappingFragment StoreEntitySet="Coach_Email">
+          <ScalarProperty Name="iD_Coach" ColumnName="iD_Coach" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coach_Phone">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Coach_Phone">
+        <MappingFragment StoreEntitySet="Coach_Phone">
+          <ScalarProperty Name="coach_ID" ColumnName="coach_ID" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="ph_Type" ColumnName="ph_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coach_Team">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Coach_Team">
+        <MappingFragment StoreEntitySet="Coach_Team">
+          <ScalarProperty Name="team" ColumnName="team" />
+          <ScalarProperty Name="coach" ColumnName="coach" />
+          <ScalarProperty Name="signDate" ColumnName="signDate" />
+          <ScalarProperty Name="expirationDate" ColumnName="expirationDate" />
+          <ScalarProperty Name="breakupDate" ColumnName="breakupDate" />
+          <ScalarProperty Name="wage" ColumnName="wage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Competitions">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Competition">
+        <MappingFragment StoreEntitySet="Competition">
+          <ScalarProperty Name="iD" ColumnName="iD" />
+          <ScalarProperty Name="complete_Name" ColumnName="complete_Name" />
+          <ScalarProperty Name="c_Type" ColumnName="c_Type" />
+          <ScalarProperty Name="association" ColumnName="association" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Competition_Type">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Competition_Type">
+        <MappingFragment StoreEntitySet="Competition_Type">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="abbreviation" ColumnName="abbreviation" />
+          <ScalarProperty Name="completeName" ColumnName="completeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Degrees">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Degree">
+        <MappingFragment StoreEntitySet="Degree">
+          <ScalarProperty Name="iD_Degree" ColumnName="iD_Degree" />
+          <ScalarProperty Name="degree_Name" ColumnName="degree_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goals">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Goal">
+        <MappingFragment StoreEntitySet="Goals">
+          <ScalarProperty Name="match" ColumnName="match" />
+          <ScalarProperty Name="player" ColumnName="player" />
+          <ScalarProperty Name="minute" ColumnName="minute" />
+          <ScalarProperty Name="team" ColumnName="team" />
+          <ScalarProperty Name="gType" ColumnName="gType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="goalTypes">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.goalType">
+        <MappingFragment StoreEntitySet="goalType">
+          <ScalarProperty Name="goalType1" ColumnName="goalType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LineUps">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.LineUp">
+        <MappingFragment StoreEntitySet="LineUp">
+          <ScalarProperty Name="player" ColumnName="player" />
+          <ScalarProperty Name="match" ColumnName="match" />
+          <ScalarProperty Name="minuteIn" ColumnName="minuteIn" />
+          <ScalarProperty Name="minuteOut" ColumnName="minuteOut" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="team" ColumnName="team" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Matches">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Match">
+        <MappingFragment StoreEntitySet="Match">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="home" ColumnName="home" />
+          <ScalarProperty Name="away" ColumnName="away" />
+          <ScalarProperty Name="goalsHome" ColumnName="goalsHome" />
+          <ScalarProperty Name="goalsAway" ColumnName="goalsAway" />
+          <ScalarProperty Name="matchday" ColumnName="matchday" />
+          <ScalarProperty Name="startYear" ColumnName="startYear" />
+          <ScalarProperty Name="competition" ColumnName="competition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Match_Referee">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Match_Referee">
+        <MappingFragment StoreEntitySet="Match_Referee">
+          <ScalarProperty Name="match" ColumnName="match" />
+          <ScalarProperty Name="referee" ColumnName="referee" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="position" ColumnName="position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Matchdays">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Matchday">
+        <MappingFragment StoreEntitySet="Matchday">
+          <ScalarProperty Name="matchday1" ColumnName="matchday" />
+          <ScalarProperty Name="startYear" ColumnName="startYear" />
+          <ScalarProperty Name="competition" ColumnName="competition" />
+          <ScalarProperty Name="match_Date" ColumnName="match_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="iD" ColumnName="iD" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Player">
+        <MappingFragment StoreEntitySet="Player">
+          <ScalarProperty Name="iD" ColumnName="iD" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="height" ColumnName="height" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Player_Direction">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Player_Direction">
+        <MappingFragment StoreEntitySet="Player_Direction">
+          <ScalarProperty Name="player" ColumnName="player" />
+          <ScalarProperty Name="direction" ColumnName="direction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Player_Email">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Player_Email">
+        <MappingFragment StoreEntitySet="Player_Email">
+          <ScalarProperty Name="player" ColumnName="player" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Player_Team">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Player_Team">
+        <MappingFragment StoreEntitySet="Player_Team">
+          <ScalarProperty Name="player" ColumnName="player" />
+          <ScalarProperty Name="team" ColumnName="team" />
+          <ScalarProperty Name="wage" ColumnName="wage" />
+          <ScalarProperty Name="signDate" ColumnName="signDate" />
+          <ScalarProperty Name="expirationDate" ColumnName="expirationDate" />
+          <ScalarProperty Name="breakUpDate" ColumnName="breakUpDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayerPositions">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.PlayerPosition">
+        <MappingFragment StoreEntitySet="PlayerPosition">
+          <ScalarProperty Name="player" ColumnName="player" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="experience" ColumnName="experience" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Position">
+        <MappingFragment StoreEntitySet="Position">
+          <ScalarProperty Name="abbreviation" ColumnName="abbreviation" />
+          <ScalarProperty Name="completeName" ColumnName="completeName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PossiblePositions">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.PossiblePosition">
+        <MappingFragment StoreEntitySet="PossiblePosition">
+          <ScalarProperty Name="abbreviation" ColumnName="abbreviation" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Referees">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Referee">
+        <MappingFragment StoreEntitySet="Referee">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="country" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seasons">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Season">
+        <MappingFragment StoreEntitySet="Season">
+          <ScalarProperty Name="startYear" ColumnName="startYear" />
+          <ScalarProperty Name="competition" ColumnName="competition" />
+          <ScalarProperty Name="beginDate" ColumnName="beginDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="FootballManagerDBModel.Team">
+        <MappingFragment StoreEntitySet="Team">
+          <ScalarProperty Name="iD" ColumnName="iD" />
+          <ScalarProperty Name="abbreviation" ColumnName="abbreviation" />
+          <ScalarProperty Name="completeName" ColumnName="completeName" />
+          <ScalarProperty Name="formation" ColumnName="formation" />
+          <ScalarProperty Name="association" ColumnName="association" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Team_Member" TypeName="FootballManagerDBModel.Team_Member" StoreEntitySet="Team_Member">
+      <EndProperty Name="Member">
+        <ScalarProperty Name="iD" ColumnName="member" />
+      </EndProperty>
+      <EndProperty Name="Team">
+        <ScalarProperty Name="iD" ColumnName="team" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="FootballManagerDBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="FootballManagerDBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="FootballManagerDBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="FootballManagerDBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FootballManagerDBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="FootballManagerDBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FootballManagerDBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="FootballManagerDBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="FootballManagerDBModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="Referees_Competition" FunctionName="FootballManagerDBModel.Store.Referees_Competition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FootballManagerDBModel.Referees_Competition_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,98 @@
+﻿@model FootballManagerApp.Models.Match
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Match</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.home, "home", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("home", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.home, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.away, "away", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("away", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.away, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.goalsHome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.goalsHome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.goalsHome, "", new { @class = "text-danger" })
+                <span>
+                    @Html.ActionLink("Registrar Goles", "RegisterGoals", new { match = Model.id, team = Model.home }, new { @class = "btn btn-default" })
+                </span>
+                <span>
+                    @Html.ActionLink("Ver Goles", "WatchGoals", new { model = Model.id, team = Model.home }, new { @class = "btn btn-default" })
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.goalsAway, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.goalsAway, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.goalsAway, "", new { @class = "text-danger" })
+                <span>
+                    @Html.ActionLink("Registrar Goles", "RegisterGoals", new { match = Model.id, team = Model.away }, new { @class = "btn btn-default" })
+                </span>
+                <span>
+                    @Html.ActionLink("Ver Goles", "WatchGoals", new { model = Model.id, team = Model.away}, new { @class = "btn btn-default" })
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.matchday, "matchday", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("matchday", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.matchday, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.startYear, "startYear", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("startYear", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.startYear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.competition, "competition", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("competition", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.competition, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "BackToMatches", new { c = Model.competition, y = Model.startYear})
+</div>

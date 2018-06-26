@@ -1,0 +1,32 @@
+﻿@model IEnumerable<FootballManagerApp.Models.Referees_Competition_Result>
+
+@{
+    ViewBag.Title = "Referee_Competition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Referee_Competition</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.refereeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.avarage)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.refereeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.avarage)
+            </td>
+        </tr>
+    }
+
+</table>

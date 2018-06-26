@@ -1,0 +1,72 @@
+﻿@model FootballManagerApp.Models.Historic_Coach_Result
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Details</h2>
+<div>
+    <h4>Coach</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.coach.coach_Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.coach.coach_Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.coach.birthdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.coach.birthdate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.coach.wasPlayer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.coach.wasPlayer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.coach.dateStart)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.coach.dateStart)
+        </dd>
+    </dl>
+</div>
+
+<h3>Equipos en los que ha participado</h3>
+<table class="table">
+    <tr>
+        <th>
+            Equipo
+        </th>
+        <th>
+            Fecha de inicio
+        </th>
+        <th>
+            Fecha de separacion
+        </th>
+    </tr>
+
+    @foreach (var item in Model.teams)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.team)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.signDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.expirationDate)
+        </td>
+    </tr>
+    }
+</table>
+
+
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

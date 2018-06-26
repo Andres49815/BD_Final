@@ -1,0 +1,47 @@
+﻿@model IEnumerable<FootballManagerApp.Models.Competition>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")  | @Html.ActionLink("Query", "Competition_Year")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.complete_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Association1.completeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Competition_Type.description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.complete_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Association1.completeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Competition_Type.description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.iD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.iD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.iD }) |
+            @Html.ActionLink("Temporadas", "Seasons", new { id = item.iD })
+        </td>
+    </tr>
+}
+
+</table>

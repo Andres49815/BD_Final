@@ -1,0 +1,59 @@
+﻿@model IEnumerable<FootballManagerApp.Models.LineUp>
+
+@{
+    ViewBag.Title = "LineUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{ var team_name = (Model.Count() > 0) ? Model.ElementAt(0).Team1.completeName.ToString() : "Team";}
+@{ var date = (Model.Count() > 0) ? Model.ElementAt(0).Match1.Matchday1.match_Date.ToString() : ""; }
+
+<h2>LineUp : @team_name : @date </h2>
+
+<p>
+    @Html.ActionLink("Add To LineUp", "AddToLineUp", new { match =  Model.ElementAt(0).match, team = Model.ElementAt(0).team })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Player1.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player1.lastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PossiblePosition.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.position)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player1.firstName)
+            </td>
+            <th>
+                @Html.DisplayFor(model => item.Player1.lastName)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.PossiblePosition.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.position)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditLineUp", new { player = item.player, match = item.match }) |
+                @Html.ActionLink("Delete", "DeleteLineUp", new { player = item.player, match = item.match })
+            </td>
+        </tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Matchdays", new {c = Model.ElementAt(0).Match1.competition, y = Model.ElementAt(0).Match1.startYear })
+</div>

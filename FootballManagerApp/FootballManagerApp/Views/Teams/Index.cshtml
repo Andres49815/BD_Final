@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FootballManagerApp.Models.Team>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.ParticipantTeams = new List<FootballManagerApp.Models.Team >();
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.abbreviation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.completeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.formation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Association1.completeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.abbreviation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.completeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Association1.completeName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.iD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.iD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.iD })
+        </td>
+    </tr>
+}
+
+</table>

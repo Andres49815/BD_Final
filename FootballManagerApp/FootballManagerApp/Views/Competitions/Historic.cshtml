@@ -1,0 +1,82 @@
+﻿@model FootballManagerApp.Models.HistoricMatchesResult
+
+
+@{
+    ViewBag.Title = "Historic";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Historic</h2>
+
+
+<h3>Partidos disputados</h3>
+<table class="table">
+    <tr>
+        <th>
+            Casa
+        </th>
+        <th>
+            Goles de Casa
+        </th>
+        <th>
+            Goles de Visita
+        </th>
+        <th>
+            Visita
+        </th>
+        <th>
+            Temporada
+        </th>
+    </tr>
+
+    @foreach (var item in Model.matches)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.home)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.goalsHome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.goalsAway)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.away)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.year)
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+<h3>Goleadores</h3>
+<table class="table">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Goles
+        </th>
+    </tr>
+
+    @foreach (var item in Model.scorers)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalGoals)
+            </td>
+        </tr>
+    }
+
+</table>
+
+

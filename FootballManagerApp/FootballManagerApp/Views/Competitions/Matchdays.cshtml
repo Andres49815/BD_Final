@@ -1,0 +1,52 @@
+﻿@model IEnumerable<FootballManagerApp.Models.Matchday>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var matchday in Model)
+{
+    <h3>@matchday.matchday1.ToString(): @matchday.match_Date.ToString()</h3>
+    <table class="table">
+        <tr>
+            <th>
+                Casa
+            </th>
+            <th>
+                Goles de Casa
+            </th>
+            <th>
+                Goles de Visita
+            </th>
+            <th>
+                Visita
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var match in matchday.Matches)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => match.Team1.abbreviation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => match.goalsHome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => match.goalsAway)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => match.Team.abbreviation)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit","EditMatch", new { id = match.id}) |
+                    @Html.ActionLink("Details", "DetailsMatch", new { id = match.id}) | 
+                    @Html.ActionLink("Delete", "DeleteMatch", new { id = match.id}) |
+                    @Html.ActionLink("Historicos", "Historic", new { team_1 = match.Team.iD, team_2 = match.Team1.iD })
+                </td>
+            </tr>
+        }
+    </table>
+}

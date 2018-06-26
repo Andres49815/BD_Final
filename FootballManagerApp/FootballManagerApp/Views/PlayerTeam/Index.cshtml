@@ -1,0 +1,79 @@
+﻿@model IEnumerable<FootballManagerApp.Models.Player_Team>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@{ List<decimal> equipos = new List<decimal>();}
+@foreach (var itemm in Model)
+{
+    decimal actual;
+    if (!equipos.Contains(itemm.team))
+    {
+        actual = itemm.team;
+        equipos.Add(actual);
+    }
+    else
+    {
+        continue;
+    }
+    <font size="32"> @itemm.Team1.completeName</font>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Team1.abbreviation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player1.firstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player1.lastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.expirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.breakUpDate)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        if (item.team == actual)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team1.abbreviation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player1.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player1.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.expirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.breakUpDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { player = item.player, team = item.team, signDate = item.signDate }) |
+                @Html.ActionLink("Details", "Details", new { player = item.player, team = item.team, signDate = item.signDate }) |
+                @Html.ActionLink("Delete", "Delete", new { player = item.player, team = item.team, signDate = item.signDate })
+            </td>
+        </tr>
+        }
+        }
+        </table>
+        }
+
+

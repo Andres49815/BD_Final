@@ -1,0 +1,74 @@
+﻿@model IEnumerable < FootballManagerApp.Models.General_Table_Result>
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.possition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.team)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.played)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.won)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.drawn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.goalsFavor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.goalsAgainst)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.points)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.possition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.team)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.played)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.won)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.drawn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.goalsFavor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.goalsAgainst)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.points)
+        </td>
+    </tr>
+    }
+
+</table>
